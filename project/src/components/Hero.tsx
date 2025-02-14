@@ -63,7 +63,7 @@ export default function Hero() {
           className="mb-8"
         >
           <div className="overflow-hidden">
-            <h1 className="text-7xl font-bold mb-6 flex justify-center gap-2">
+            <h1 className="lg:text-7xl text-2xl  font-bold mb-6 flex justify-center gap-2">
               {name.map((letter, i) => (
                 <motion.span
                   key={i}
@@ -79,7 +79,7 @@ export default function Hero() {
             </h1>
           </div>
           <div className="overflow-hidden">
-            <h2 className="text-4xl mb-8 flex justify-center gap-1">
+            <h2 className="lg:text-4xl  text-xl mb-8 flex justify-center gap-1">
               {title.map((letter, i) => (
                 <motion.span
                   key={i}
