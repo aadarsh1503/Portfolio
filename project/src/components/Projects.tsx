@@ -9,7 +9,7 @@ const projects = [
     title: 'GVS Cargo Website',
     description: 'Full-stack Cargo Website with React, Node.js, Express, and MongoDB',
     image: i1,
-    tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+    tags: ['React', 'Node.js',  'Express'],
     link: 'https://gvscargo.com/', 
   },
   {

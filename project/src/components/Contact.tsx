@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, Send } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, Send } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -18,47 +18,47 @@ export default function Contact() {
           <p className="text-2xl text-gray-300 text-center mb-12">
             I'm always open to discussing new projects and opportunities.
           </p>
-          
+
           <div className="bg-gray-800/50 p-8 rounded-lg backdrop-blur-sm border border-purple-500/20">
-            <form className="space-y-6">
+            <form 
+              action="https://formspree.io/f/xldgpvab"  
+              method="POST"
+              className="space-y-6"
+            >
               <div className="grid md:grid-cols-2 gap-6">
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                >
+                <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
                   <input
                     type="text"
+                    name="name"
                     className="w-full px-4 py-3 bg-gray-900/50 border border-purple-500/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                     placeholder="John Doe"
+                    required
                   />
                 </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                >
+                <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
                   <input
                     type="email"
+                    name="email"
                     className="w-full px-4 py-3 bg-gray-900/50 border border-purple-500/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                     placeholder="john@example.com"
+                    required
                   />
                 </motion.div>
               </div>
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
+
+              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                 <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
                 <textarea
+                  name="message"
                   rows={6}
                   className="w-full px-4 py-3 bg-gray-900/50 border border-purple-500/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   placeholder="Your message..."
+                  required
                 />
               </motion.div>
+
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -68,26 +68,17 @@ export default function Contact() {
                 <Send size={18} />
               </motion.button>
             </form>
-            
-            <div className="mt-12 grid md:grid-cols-2 gap-6">
-  <motion.a
-    href="mailto:aadarshchauhan35@gmail.com?subject=Hii Aadarsh"
-    className="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors"
-    whileHover={{ x: 5 }}
-  >
-    <Mail size={20} />
-    <span>aadarshchauhan35@gmail.com</span>
-  </motion.a>
-  <motion.a
-    href="tel:+91730064899"
-    className="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors"
-    whileHover={{ x: 5 }}
-  >
-    <Phone size={20} />
-    <span>+91 730064899</span>
-  </motion.a>
-</div>
 
+            <div className="mt-12 grid md:grid-cols-2 gap-6">
+              <motion.a href="mailto:aadarshchauhan35@gmail.com" className="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors" whileHover={{ x: 5 }}>
+                <Mail size={20} />
+                <span>aadarshchauhan35@gmail.com</span>
+              </motion.a>
+              <motion.a href="tel:+91730064899" className="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors" whileHover={{ x: 5 }}>
+                <Phone size={20} />
+                <span>+91 730064899</span>
+              </motion.a>
+            </div>
           </div>
         </motion.div>
       </div>
