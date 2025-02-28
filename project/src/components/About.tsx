@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Database, Server, Globe, Briefcase, Award, Terminal, Coffee } from 'lucide-react';
-
+import aadi from "./aadi.jpg"
 const skills = [
   { name: 'Frontend Development', icon: Code2, color: 'text-blue-500' },
   { name: 'Backend Development', icon: Server, color: 'text-green-500' },
@@ -26,18 +26,20 @@ export default function About() {
           About Me
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <img
-              src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?auto=format&fit=crop&w=800&q=80"
-              alt="Profile"
-              className="rounded-lg shadow-2xl ring-4 ring-purple-500/50"
-            />
-          </motion.div>
+        <motion.div
+  initial={{ opacity: 0, x: -50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="w-full h-full"
+>
+  <img
+    src={aadi}
+    alt="Profile"
+    className="rounded-lg shadow-2xl ring-4 bg-gray-900 ring-purple-500/50 object-cover w-full h-full"
+  />
+</motion.div>
+
           <div>
             <motion.p 
               className="text-xl text-gray-300 leading-relaxed mb-8"
